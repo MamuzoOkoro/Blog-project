@@ -1,24 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
+
 const initialState = {
-    user: "" || null, 
+    user: "" || null,
+    toggle: false
 }
 
-const globalstate = createSlice({
-  name: "second",
-  initialState,
-  reducers: {
-    user: (state, { payload }) => {
-        state.user = payload
-    },
+const GlobalState:any = createSlice({
+    name: "globalState",
+    initialState,
+    reducers: {
+        signInUser: (state: any, { payload }: any) => {
+            state.user = payload
+        },
 
-    logOut: (state) => {
-        state.user = null
-    },
-    
-  }
+        logOut: (state: any) => {
+            state.user = null
+        },
+
+        changeToggleTrue: (state: any) => {
+            state.toggle = true
+        },
+        changeToggleFalse: (state: any) => {
+            state.toggle = false
+        }
+    }
 });
 
-export const {} = globalstate.actions
+export const { signInUser, logOut, changeToggleTrue, changeToggleFalse } = GlobalState.actions
 
-export default globalstate.reducer
+export default GlobalState.reducer

@@ -1,7 +1,12 @@
+import AdminHeader from "./AdminHeader"
+
 
 const AdminHomePage = () => {
   return (
-    <div>AdminHomePage</div>
+    <div className="w-full h-[100%">
+      <AdminHeader/>
+      dd
+    </div>
   )
 }
 

@@ -5,17 +5,31 @@ import UserHomePage from "../pages/UserScreen/UserHomePage"
 import GetStartedPage from "../pages/GetStartedPage"
 import AdminSignUp from "../pages/Auth/AdminSignUp"
 import UserSignUp from "../pages/Auth/UserSignup"
+import CategoriesPage from "../pages/Auth/CategoriesPage"
+import AdminSignIn from "../pages/Auth/AdminSignIn"
+import UserSignIn from "../pages/Auth/UserSignIn"
+import LandingPage from "../pages/LandingPage/LandingPage"
+import AdminLayout from "../Component/common/AdminLayout"
+
 
 
 export const mainRoute = createBrowserRouter(
     [
     {
         path: "/",
-        element: < Layout/>
+        element: < Layout/>,
+        children:[{
+            index:true,
+            element: <LandingPage/>
+        }]
     },
     {
-        path: "/adminpage",
-        element: < AdminHomePage/>
+        path: "/admin",
+        element: <AdminLayout/>,
+        children:[{
+            index:true,
+            element: <AdminHomePage/>
+        }]
     },
     {
         path: "/",
@@ -30,8 +44,21 @@ export const mainRoute = createBrowserRouter(
         element: < AdminSignUp/>
     },
     {
+        path: "/adminSignIn",
+        element: < AdminSignIn/>
+    },
+    {
         path: "/userSignUp",
         element: < UserSignUp/>
     },
+    {
+        path: "/userSignIn",
+        element: <UserSignIn/>
+    },
+    {
+        path: "/categoriespage",
+        element: < CategoriesPage/>
+    }
+    
 ]
 )

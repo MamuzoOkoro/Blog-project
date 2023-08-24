@@ -1,9 +1,9 @@
-import LandingPage from "../../pages/LandingPage"
+import { Outlet } from "react-router-dom"
 
 const Layout = () => {
   return (
     <div>
-        <LandingPage/>
+        <Outlet/>
     </div>
   )
 }
